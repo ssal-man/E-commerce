@@ -1,11 +1,13 @@
 .signin{
+    display: flex;
+    flex-direction: column;
     width:30vw;
 }
 .title{
-    padding-top: 40px;
+    margin: 10px 0px;
+
 }
 .buttons{
     display: flex;
-    justify-content: space-around;
-    padding: 0px;
+    justify-content: space-between;
 }
