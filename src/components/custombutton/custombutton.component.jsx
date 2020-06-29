@@ -9,4 +9,4 @@ const CustomButton = ({children ,googleSignIn, ...otherprops})=>{
     )
 }
 
-export default CustomButton
+export default CustomButton;
