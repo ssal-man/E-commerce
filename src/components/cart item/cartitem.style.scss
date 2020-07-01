@@ -1,0 +1,20 @@
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    .cart-item{
+        display: flex;
+        flex-direction: row;
+    }
+    .image{
+        height: 80px;
+        width: 60px;
+    }
+    .cart-item-info{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        top:20px;
+        left:10px;
+    }
+}
