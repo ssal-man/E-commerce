@@ -9,6 +9,7 @@ import { auth } from './firebase/firebase.utils';
 import { createUserProfile } from './firebase/firebase.utils';
 import { connect} from 'react-redux';
 import { setCurrentUser } from './redux/user/user.action';
+import { selectCurrentUser } from './redux/user/user.selector';
 
 class App extends React.Component {
 
@@ -52,8 +53,8 @@ class App extends React.Component {
 }
 }
 
-const mapStateToProps = ({user}) => ({
-  currentUser:user.currentUser
+const mapStateToProps = (state) => ({
+  currentUser:selectCurrentUser(state)
 })
 
 const mapDispatchToPropsApp = dispatch =>({
