@@ -9,7 +9,7 @@ import CartDropdown from '../cart dropdown/cartdropdown.component';
 import { selectHiddenToggle } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selector';
 
-const Header=({currentUser, hidden})=>{
+const Header=({currentUser, hidden, history})=>{
     return(
         <div className='header'>
             <Link className='logo-container' to='/'>

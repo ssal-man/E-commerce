@@ -7,6 +7,7 @@ const cartItem = ({cartItems}) => {
     return(
         <div className='cart-items'>
             {
+                cartItems.length?
                 cartItems.map(({id, imageUrl, name, quantity, price})=>(
                 <div key={id}>
                 <div className='cart-item'>
@@ -18,7 +19,8 @@ const cartItem = ({cartItems}) => {
                 </div>
                 <hr/>
                 </div>    
-                ))
+                )):
+                <span className='message'>Your cart is empty</span>
             }
         </div>
         )
