@@ -1,8 +1,10 @@
 import React from 'react';
 import './checkoutitem.style.scss';
-import { addItem } from '../../redux/cart/cart.action';
+import { addItem, decreaseQuantity, removeItem } from '../../redux/cart/cart.action';
+import { connect } from 'react-redux';
 
-export const CheckoutItem = ({cartItem:{name, price, imageUrl, quantity }}) =>{
+const CheckoutItem = ({ cartItem, dispatch }) => {
+    const {name, price, imageUrl, quantity}=cartItem
     return(
     <div className='checkout-item'>
         <div className='image-container'>
@@ -10,12 +12,15 @@ export const CheckoutItem = ({cartItem:{name, price, imageUrl, quantity }}) =>{
         </div>
         <span className='name'>{name}</span>
             <span className='quantity'>
-                <div className='add-item'>&#10094;</div>
+                <div className='remove-item' onClick={() => dispatch(decreaseQuantity(cartItem))}>&#10094;</div>
                 {quantity}
-                <div className='remove-item'>&#10095;</div>
+                <div className='add-item' onClick={()=>dispatch(addItem(cartItem))}>&#10095;</div>
             </span>
         <span className='price'>{price}</span>
-        <div className='remove-button'>&#10005;</div>
+        <div className='remove-button' onClick={()=>dispatch(removeItem(cartItem))}>&#10005;</div>
     </div>
     )
 }
+
+
+export default connect(null)(CheckoutItem);
